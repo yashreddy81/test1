@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>task1</title>
+    <script>
+        function reverseNumber() {
+            const num = 32243; 
+            
+            const reversedNum = parseInt(num.toString().split('').reverse().join(''));
+            const output = "Original Number: " + num + "<br>Reversed Number: " + reversedNum;
+            document.getElementById("result").innerHTML = output;
+        }
+
+        
+        window.onload = reverseNumber;
+    </script>
+</head>
+<body>
+    <h1>Reversed Number</h1>
+    <p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>task3</title>
+</head>
+<body>
+    <h1>Multiplication and Division Calculator</h1>
+    
+    <p>Enter the first number: 12</p>
+    <p>Enter the second number: 10</p>
+
+    <div>
+        <label for="multiply">Multiply:</label>
+        <input type="radio" id="multiply" name="operation" value="multiply" checked>
+        
+        <label for="divide">Divide:</label>
+        <input type="radio" id="divide" name="operation" value="divide">
+    </div>
+
+    <button onclick="calculate()">Calculate</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+           
+            let num1 = 12;
+            let num2 = 10;
+
+            
+            let operation = document.querySelector('input[name="operation"]:checked').value;
+
+            
+            let result;
+            if (operation === "multiply") {
+                result = num1 * num2;
+            } else if (operation === "divide") {
+                result = num1 / num2;
+            }
+
+            
+            document.getElementById("result").textContent = "Result: " + result;
+        }
+    </script>
+</body>
+</html>

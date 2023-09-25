@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>task2</title>
+</head>
+<body>
+    <h1>Sort String Alphabetically</h1>
+    <p>Input String: 'webmaster'</p>
+    <p>Sorted String: <span id="sortedString"></span></p>
+
+    <script>
+       
+        let inputString = 'webmaster';
+
+        
+        let sortedString = sortStringAlphabetically(inputString);
+
+       
+        document.getElementById("sortedString").textContent = sortedString;
+
+        function sortStringAlphabetically(inputString) {
+            
+            let charArray = inputString.split('');
+
+           
+            charArray.sort(function(a, b) {
+                return a.localeCompare(b);
+            });
+
+            
+            let sortedString = charArray.join('');
+
+            return sortedString;
+        }
+    </script>
+</body>
+</html>

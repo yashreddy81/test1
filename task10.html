@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>task4</title>
+</head>
+<body>
+    <h1>Current Date and Time (IST Format)</h1>
+    <p id="date"></p>
+    <p id="time"></p>
+
+    <script>
+        function displayDateTime() {
+            
+            let now = new Date();
+            let istOffset = 5.5 * 60 * 60 * 1000; 
+            let istDate = new Date(now.getTime() + istOffset);
+
+            
+            let dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+            let timeOptions = { weekday: 'long', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
+            
+            let dateString = istDate.toLocaleDateString('en-US', dateOptions);
+            let timeString = istDate.toLocaleTimeString('en-US', timeOptions);
+
+            
+            document.getElementById("date").textContent = "Date (IST): " + dateString;
+            document.getElementById("time").textContent = "Time (IST): " + timeString;
+        }
+
+       
+        displayDateTime();
+        
+        
+        setInterval(displayDateTime, 1000);
+    </script>
+</body>
+</html>
